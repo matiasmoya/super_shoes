@@ -1,0 +1,66 @@
+<%= form_for(article) do |f| %>
+  <% if article.errors.any? %>
+    <div class="row">
+      <div class="col s12">
+        <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+        <ul>
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :total_in_shelf %>
+      <%= f.text_field :total_in_shelf %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :total_in_vault %>
+      <%= f.text_field :total_in_vault %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :store_id %>
+      <%= f.select :store_id, options_from_collection_for_select(Store.all, 'id', 'name'),{prompt: "Seleccione un estado para la auditoria"}, { class: "browser-default"} %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s3">
+      <%= f.submit class: "white-text waves-effect waves-light blue btn" %>
+    </div>
+    <div class="col s2 center-align">
+      <%= link_to 'Back', articles_path, class: "back_link" %>
+    </div>
+  </div>
+<% end %>

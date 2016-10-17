@@ -1,0 +1,38 @@
+<%= form_for(store) do |f| %>
+  <% if store.errors.any? %>
+    <div class="row">
+      <div class="col s12">
+        <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+        <ul>
+        <% store.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s3">
+      <%= f.submit class: "white-text waves-effect waves-light blue btn" %>
+    </div>
+    <div class="col s2 center-align">
+      <%= link_to 'Back', stores_path, class: "back_link"%> <br>
+    </div>
+  </div>
+<% end %>

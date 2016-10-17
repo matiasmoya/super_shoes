@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SuperShoes</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+  </head>
+  <body>
+    <header>
+      <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+          <div class="brand-logo">
+            <%= link_to "Super Shoes", root_path %>
+          </div>
+
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+          <ul class="right hide-on-med-and-down">
+            <li><%= link_to "Stores", stores_path %></li>
+            <li><%= link_to "Articles", articles_path %></li>
+          </ul>
+
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><%= link_to "Stores", stores_path %></li>
+            <li><%= link_to "Articles", articles_path %></li>
+          </ul>
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="blue">
+      <div class="footer-copyright">
+        <div class="container">
+          <p class="white-text">© 2016 Copyright</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
