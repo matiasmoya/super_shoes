@@ -11,6 +11,9 @@ gem 'materialize-sass'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
+gem 'factory_girl_rails'
+gem 'faker'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'

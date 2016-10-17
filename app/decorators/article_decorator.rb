@@ -13,7 +13,7 @@ class ArticleDecorator
       price: article.price,
       total_in_shelf: article.total_in_shelf,
       total_in_vault: article.total_in_vault,
-      store_name: article.store.name
+      store_name: article.store&.name
     }
   end
 

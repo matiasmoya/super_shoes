@@ -3,9 +3,9 @@ class CreateArticles < ActiveRecord::Migration[5.0]
     create_table :articles do |t|
       t.string :name
       t.string :description
-      t.string :price
-      t.string :total_in_shelf
-      t.string :total_in_vault
+      t.decimal :price, precision: 8, scale: 2
+      t.integer :total_in_shelf, default: 0
+      t.integer :total_in_vault, default: 0
       t.references :store, foreign_key: true
 
       t.timestamps
