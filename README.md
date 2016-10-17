@@ -1,24 +1,22 @@
-# README
+# Super Shoes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+You probably want to install a ruby environment manager like [RVM](https://rvm.io/rvm/install)
 
-* Ruby version
+Ruby version `2.3.0`
 
-* System dependencies
+Install Bundler `gem install bundler`
 
-* Configuration
+Run `bundle install`
 
-* Database creation
+Run migrations
 
-* Database initialization
+```shell
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
 
-* How to run the test suite
+## Running Tests
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`bundle exec rspec`
