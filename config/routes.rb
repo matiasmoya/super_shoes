@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :services, defaults: { format: :json } do
     resources :stores, only: [:index]
     resources :articles, only: [:index]
-    get 'articles/stores/:id', to: 'articles_stores#show'
+    get 'articles/stores/:id', to: 'articles_stores#show', as: 'store_articles'
   end
 
   get "/400" => "errors#bad_request"
