@@ -21,6 +21,8 @@ feature "Admin creates articles" do
       expect {
         click_on "Create Article"  
       }.to change{ Article.count }.by 1
+
+      expect(Article.last.store).to eq(store)
     end
 
     it "doesn't fills the form properly and the article is not created" do
