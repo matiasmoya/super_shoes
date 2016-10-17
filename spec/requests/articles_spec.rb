@@ -27,7 +27,10 @@ RSpec.describe "Articles", type: :request do
             HTTP_AUTHORIZATION: "Basic " + Base64::encode64("wrong_user:wrong_password")
           }
         expect(response).to have_http_status(401)
-        expect(response.body).to eq("HTTP Basic: Access denied.\n")
+
+        expect(json['success']).to eq(false)
+        expect(json['error_code']).to eq(401)
+        expect(json['error_msg']).to eq('Not authorized')
       end
     end
 

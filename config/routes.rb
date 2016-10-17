@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     get 'articles/stores/:id', to: 'articles_stores#show'
   end
 
+  get "/400" => "errors#bad_request"
+  get "/401" => "errors#not_authorized"
+  get "/404" => "errors#not_found"
+  get "/500" => "errors#exception"
 end
